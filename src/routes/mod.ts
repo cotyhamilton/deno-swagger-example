@@ -1,6 +1,6 @@
 import { Router } from "../deps.ts";
 import { swagger } from "./swagger.ts";
-import { hello } from "./test.ts";
+import { hello } from "./hello.ts";
 
 const apiRouter = new Router();
 
