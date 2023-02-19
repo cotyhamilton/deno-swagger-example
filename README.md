@@ -7,5 +7,5 @@ Deno oak server with swagger
 ```
 # start app server
 
-deno run --allow-net --watch src/mod.ts
+deno run --allow-net --allow-read --allow-env --watch src/app.ts
 ```

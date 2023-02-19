@@ -1,13 +1,14 @@
-import { Application, Router, cors } from "./deps.ts";
+import { Application, cors, Router } from "./deps.ts";
 import { apiRouter } from "./routes/mod.ts";
 
+const port = +(Deno.env.get("PORT") || 8000);
 const app = new Application();
 
 const router = new Router()
-    .use(apiRouter.routes());
+  .use(apiRouter.routes());
 
 app.use(cors());
 app.use(router.routes());
 
-console.info("CORS-enabled web server listening on port 8000");
-await app.listen({ port: 8000 });
+console.info(`Server listening on port ${port}`);
+await app.listen({ port });

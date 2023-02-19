@@ -5,6 +5,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    
+    environment:
+      PORT: 8000
 
     volumes:
       - ..:/workspace:cached
@@ -15,5 +18,7 @@ services:
   swagger-ui:
     image: swaggerapi/swagger-ui:latest
     restart: unless-stopped
+    ports:
+      - "8080:8080"
     environment:
       URLS: "[{ url: 'http://localhost:8000/swagger.json' }]"
